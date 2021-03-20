@@ -28,7 +28,7 @@ namespace ElevenNote.Services
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Notes.Add(entity);
+                ctx.Note.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -39,7 +39,7 @@ namespace ElevenNote.Services
             {
                 var query =
                     ctx
-                        .Notes
+                        .Note
                         //use Lambda as filter
                         .Where(e => e.OwnerId == _userId)
                         .Select(
@@ -62,7 +62,7 @@ namespace ElevenNote.Services
             {
                 var entity =
                     ctx
-                        .Notes
+                        .Note
                         .Single(e => e.NoteId == id && e.OwnerId == _userId);
                 return
                     new NoteDetail
@@ -82,7 +82,7 @@ namespace ElevenNote.Services
             {
                 var entity =
                     ctx
-                        .Notes
+                        .Note
                         .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
 
                 entity.Title = model.Title;
@@ -99,10 +99,10 @@ namespace ElevenNote.Services
             {
                 var entity =
                     ctx
-                        .Notes
+                        .Note
                         .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
 
-                ctx.Notes.Remove(entity);
+                ctx.Note.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

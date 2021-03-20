@@ -50,10 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesCreate.cs" />
+    <Compile Include="CategoriesDetail.cs" />
+    <Compile Include="CategoriesEdit.cs" />
+    <Compile Include="CategoriesListItem.cs" />
+    <Compile Include="NoteCategoriesDetail.cs" />
     <Compile Include="NoteCreate.cs" />
     <Compile Include="NoteDetail.cs" />
     <Compile Include="NoteEdit.cs" />
     <Compile Include="NoteListItem.cs" />
+    <Compile Include="NoteCategoriesCreate.cs" />
+    <Compile Include="NoteCategoriesEdit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
